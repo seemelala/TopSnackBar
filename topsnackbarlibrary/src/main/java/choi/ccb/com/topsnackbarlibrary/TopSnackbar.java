@@ -221,6 +221,29 @@ public final class TopSnackbar extends BaseTransientBottomBar<TopSnackbar> {
     }
 
     /**
+     * Sets the text color of specified in
+     * {@link #setTextColor(Color)}.
+     */
+    @NonNull
+    public TopSnackbar setTextColor(@ColorInt int color) {
+        final SnackbarContentLayout contentLayout = (SnackbarContentLayout) mView.getChildAt(0);
+        final TextView tv = contentLayout.getMessageView();
+        tv.setTextColor(color);
+        return this;
+    }
+
+    /**
+     * Sets the background color of the action specified in
+     * {@link #setBackgroundColor(Color)}.
+     */
+    @NonNull
+    public TopSnackbar setBackgroundColor(@ColorInt int color) {
+        final SnackbarContentLayout contentLayout = (SnackbarContentLayout) mView.getChildAt(0);
+        contentLayout.setBackgroundColor(color);
+        return this;
+    }
+
+    /**
      * Set the action to be displayed in this {@link BaseTransientBottomBar}.
      *
      * @param resId    String resource to display for the action
